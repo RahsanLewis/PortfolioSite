@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -6,6 +7,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import ProjectsPage from "./pages/ProjectsPage"; // Import new projects page
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -19,14 +21,27 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <Router>
       <Header />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+      <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Skills />
+              <Projects />
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+        
+        {/* Dedicated Projects Page */}
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
+    </Router>
   );
 };
 
