@@ -1,47 +1,138 @@
-/* Hero Section */
+/* ------------------------------------ */
+/* 🎭 HERO SECTION (Mimics a Trading Card / RPG Stat Screen) */
+/* ------------------------------------ */
+
 .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(to right, #1f4037, #99f2c8);
-    color: white;
-    padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 9rem 2rem 5.75rem 2rem;
+  color: #F9F7F7; /* Lightest Blue for contrast */
+  overflow: hidden;
+  padding: 2rem;
+  background: linear-gradient(45deg, #3F72AF 30%, #112D4E 70%); /* Blue Gradient */
+  border: 2px solid black;
+  box-shadow: 0px 0px 15px rgba(63, 114, 175, 0.8); /* Blue Glow */
+  border-radius: 12px;
+}
+
+/* ------------------------------------ */
+/* 🎨 RETRO GRID OVERLAY */
+/* ------------------------------------ */
+
+/* 🔹 Adds a grid overlay to the background */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ------------------------------------ */
+/* 🔠 HERO CONTENT STYLES */
+/* ------------------------------------ */
+
+/* 🔹 Centers text & limits width */
+.hero-content {
+  max-width: 50rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 🔹 MAIN TITLE - RPG Stat Font with Flicker Effect */
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #F9F7F7;
+  animation: flicker 1.5s infinite alternate;
+  padding: 0.5rem;
+  border-bottom: 4px solid #DBE2EF;
+  letter-spacing: 3px;
+}
+
+/* 🔹 SUBTITLE - Slightly Smaller, Flickering Effect */
+.hero-subtitle {
+  font-size: 2.5rem;
+  margin: 15px 0px;
+  color: #F9F7F7;
+  animation: flicker 1.5s infinite alternate;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* 🔹 DESCRIPTION - More Readable with Subtle Shadow */
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #F9F7F7;
+  background: rgba(17, 45, 78, 0.8); /* Dark Blue Box */
+  padding: 1rem;
+  border-radius: 5px;
+  text-shadow: 0 0 10px rgba(219, 226, 239, 0.9);
+  border: 2px dashed #DBE2EF;
+}
+
+/* ------------------------------------ */
+/* ✨ FLICKERING TEXT EFFECT */
+/* ------------------------------------ */
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(219, 226, 239, 0.9);
   }
-  
-  .hero-content {
-    max-width: 600px;
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 6px rgba(219, 226, 239, 0.7);
   }
-  
-  .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(219, 226, 239, 1);
   }
-  
-  .hero h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  
-  /* Call-to-Action Button */
-  .cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #ffcc00;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
-  
-  .cta-button:hover {
-    background-color: #ffdb4d;
-  }
-  
+}
+
+/* ------------------------------------ */
+/* 🔽 SCROLL BUTTON (Modeled After Resume Button) */
+/* ------------------------------------ */
+
+.scroll-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 18px;
+  background: rgba(17, 45, 78, 0.8); /* Dark Blue */
+  color: #F9F7F7; /* Lightest Blue */
+  border: 1px solid #DBE2EF; /* Soft Blue Border */
+  border-radius: 1px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+  cursor: pointer;
+}
+
+/* 🔹 BUTTON HOVER EFFECT - Turns Gold */
+.scroll-button:hover {
+  background: #C9A227; /* Dim Gold */
+  color: black;
+  border: 1px solid #8B7500; /* Darker Gold Border */
+}
+
+/* ------------------------------------ */
+/* ⬇️ SCROLL TEXT */
+/* ------------------------------------ */
+
+.scroll-text {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  color: #F9F7F7; /* Lightest Blue */
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(249, 247, 247, 0.9);
+}
+
+/* 🔹 Scroll Text Hover Effect */
+.scroll-text:hover {
+  color: black;
+}

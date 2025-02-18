@@ -1,42 +1,54 @@
 import React from "react";
-import "./Projects.css"; // Import CSS file for styling
+import Lottie from "lottie-react";
+import ProjectAnimation from "./ProjectAnimation.json";
+import "./Projects.css";
 
-const projects = [
-  {
-    id: 1,
-    title: "Portfolio Website",
-    description: "A fully responsive personal portfolio built with React.js.",
-    link: "https://yourportfolio.com",
-  },
-  {
-    id: 2,
-    title: "Weather App",
-    description: "A React-based weather app that fetches live weather data.",
-    link: "https://yourweatherapp.com",
-  },
-  {
-    id: 3,
-    title: "Task Manager",
-    description: "A simple task tracker to manage daily activities.",
-    link: "https://yourtaskmanager.com",
-  },
-];
+/* ------------------------------------ */
+/* 🔹 FEATURED PROJECT DATA */
+/* ------------------------------------ */
+const featuredProject = {
+  id: 1,
+  title: "Portfolio Website",
+  description: "A fully responsive personal portfolio built with React.js.",
+  link: "https://yourportfolio.com",
+};
 
+/* ------------------------------------ */
+/* 🎭 PROJECTS COMPONENT */
+/* ------------------------------------ */
 const Projects = () => {
   return (
-    <section id="projects" className="projects">
-      <h2>My Projects</h2>
-      <div className="projects-container">
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
-          </div>
-        ))}
+    <section id="projects" className="projects-section">
+      
+      {/* 🔹 Left Side: Lottie Animation */}
+      <div className="projects-lottie">
+        <Lottie 
+          animationData={ProjectAnimation} 
+          loop={true} 
+          autoPlay={true}
+          style={{ width: 500, height: 600 }}
+        />
       </div>
+
+      {/* 🔹 Right Side: Featured Project Section */}
+      <div className="projects-content">
+        <h2>Featured Project</h2>
+
+        {/* 🔹 Featured Project Card */}
+        <div className="featured-project-card">
+          <h3>{featuredProject.title}</h3>
+          <p>{featuredProject.description}</p>
+        </div>
+
+        {/* 🔹 Buttons BELOW the project card */}
+        <div className="project-buttons">
+          <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="view-project-btn">
+            View Project
+          </a>
+          <a href="/projects" className="see-all-btn">See All Projects</a>
+        </div>
+      </div>
+
     </section>
   );
 };
