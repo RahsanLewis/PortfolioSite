@@ -38,16 +38,6 @@ const itemVariants = {
   },
 };
 
-/* Arrow animation - Bounces up and down infinitely */
-const arrowVariants = {
-  initial: { y: 0 },
-  hover: { y: -5 },
-  animate: {
-    y: [0, 10, 0],
-    transition: { duration: 1.5, repeat: Infinity, repeatType: "loop" },
-  },
-};
-
 /* ------------------------------------ */
 /* 🎭 HERO COMPONENT */
 /* ------------------------------------ */
