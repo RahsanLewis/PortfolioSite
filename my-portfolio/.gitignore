@@ -1,0 +1,6 @@
+.netlify
+node_modules/
+.cache/
+build/
+*.pack
+node_modules/

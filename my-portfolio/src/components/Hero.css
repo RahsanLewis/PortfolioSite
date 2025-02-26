@@ -1,0 +1,86 @@
+/* 🎭 HERO SECTION */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  padding: 4rem 8rem 0rem 8rem; /* Increased horizontal padding */
+  text-align: center;
+  border-radius: 12px;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* 🔹 Flex container for hero text + image */
+.hero-container {
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  width: 90%; /* Allows wider layout */
+  max-width: 1400px;
+}
+
+/* 🔠 HERO TEXT STYLES */
+.hero-content {
+  width: 50%; /* Expands text to take up more space */
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 0.5rem;
+  border-bottom: 3px solid black;
+  letter-spacing: 2px;
+}
+
+/* 🔹 SUBTITLE */
+.hero-subtitle {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #374151;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* 🔹 DESCRIPTION */
+.hero-description {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: black;
+  max-width: 600px;
+}
+
+/* 🔹 IMAGE STYLING */
+.hero-image {
+  width: 400px; /* Increased size */
+  height: 400px;
+  background-color: #ddd;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #666;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    width: 90%;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 300px;
+    height: 300px;
+  }
+}

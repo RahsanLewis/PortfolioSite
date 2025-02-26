@@ -1,0 +1,87 @@
+/* 🎭 TECH STACK SECTION */
+.tech-stack-section {
+  margin: 0rem 0 1rem 0;
+  text-align: center;
+  padding: .5rem 0 1rem 0;
+  background: white;
+  width: 100%;
+  overflow: hidden; /* Prevents horizontal scroll */
+}
+
+/* 🔠 SECTION HEADER */
+.tech-stack-section h2 {
+  font-size: 2rem;
+  color: black;
+  text-shadow: 0 0 12px rgba(249, 247, 247, 1);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------------ */
+/* 🔹 SCROLLING CONTAINER */
+/* ------------------------------------ */
+
+.tech-stack-wrapper {
+  display: flex;
+  overflow: hidden; /* Hides overflow so icons only appear inside section */
+  width: 100%;
+  position: relative;
+}
+
+/* 🎥 SCROLLING ANIMATION */
+.tech-stack-scroll {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-right 300s linear infinite;
+}
+
+/* 🌀 ANIMATION - Moves right infinitely */
+@keyframes scroll-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* 🎴 GROUPING TECH STACK */
+.tech-stack-group {
+  display: flex;
+  gap: 0px;
+}
+
+/* 🎨 TECH STACK ITEMS */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px; /* Prevents items from shrinking */
+}
+
+/* 🎨 Tech Icons */
+.tech-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 📜 Tech Labels */
+.tech-item p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+  .tech-stack-scroll {
+    animation: scroll-right 25s linear infinite;
+  }
+
+  .tech-item {
+    min-width: 120px;
+  }
+}

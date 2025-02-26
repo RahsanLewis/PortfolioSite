@@ -1,0 +1,233 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 2.5rem;
+  background: rgba(17, 45, 78, 0.95); /* Dark Blue */
+  border-bottom: 1px solid black; /* Strong contrast */
+  box-shadow: 0px 0px 15px rgba(63, 114, 175, 0.8); /* Blue Glow */
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* 🔹 Shrinking Header Effect When Scrolling */
+.header.shrink {
+  padding: 10px 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 12px rgba(63, 114, 175, 0.8);
+}
+
+/* ------------------------------------ */
+/* 📦 LAYOUT: EVEN SPACING FOR HEADER CONTENT */
+/* ------------------------------------ */
+
+/* 🔹 Navigation Container (Align Left) */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align everything to the left */
+  gap: 40px; /* Space between logo and nav links */
+  max-width: 1100px; /* Keep it from stretching too wide */
+  margin: 0; /* Remove auto centering */
+  padding: 0 20px;
+}
+
+/* 🔹 Navigation Links (Aligned Left) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Adjust spacing between links */
+  padding: 0;
+  margin: 0;
+}
+
+
+/* 🎨 LOGO STYLING (Aligned Left) */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* 🔹 Logo */
+.logo {
+  font-size: 1.8rem;
+  color: #F9F7F7; /* Lightest Blue */
+  text-shadow: 0 0 10px rgba(249, 247, 247, 1);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px; /* Space between logo and links */
+}
+
+/* 🔹 Logo Hover Effect - Turns Gold */
+.logo:hover {
+  color: #C9A227;
+  transform: scale(1.05);
+}
+
+
+/* ------------------------------------ */
+/* 🔗 NAVIGATION MENU */
+/* ------------------------------------ */
+
+/* 🔹 Individual Navigation Links */
+.nav-links li {
+  display: inline-block;
+}
+
+/* 🔹 Navigation Hover Effect */
+.nav-links a {
+  text-decoration: none;
+  color: #DBE2EF; /* Soft Blue */
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, border 0.3s ease;
+  padding: .1rem 1rem;
+  border: 2px solid transparent;
+  display: inline-block; /* Ensures transform works */
+}
+
+/* 🎯 Apply scale effect properly */
+.nav-links a:hover {
+  color: #C9A227; /* Dim Gold */
+  text-shadow: 0px 0px 14px rgba(201, 162, 39, 1);
+  transform: scale(1.05); /* Ensure scale effect */
+}
+
+
+/* ------------------------------------ */
+/* 🎓 RESUME BUTTON (Aligned to Right) */
+/* ------------------------------------ */
+
+.resume-button {
+  text-align: right;
+}
+
+/* 🔹 Resume Button (Default Blue, Turns Gold on Hover) */
+.resume-button a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 1.5rem;
+  background: rgba(17, 45, 78, 0.8); /* Dark Blue Background */
+  color: #F9F7F7; /* Lightest Blue */
+  border: 1px solid #DBE2EF;
+  border-radius: 1px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+}
+
+/* 🔹 Resume Button Hover Effect */
+.resume-button a:hover {
+  background: #C9A227; /* Dim Gold */
+  color: black;
+  border: 1px solid #8B7500; /* Darker Gold Border */
+}
+
+
+/* 🎭 DARK MODE TOGGLE CONTAINER */
+.dark-mode-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 🎛 TOGGLE SWITCH (Hidden Checkbox) */
+.dark-mode-checkbox {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* 🎨 STYLING THE SWITCH */
+.dark-mode-label {
+  width: 50px;
+  height: 26px;
+  background: #ddd;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* 🔘 SWITCH SLIDER */
+.dark-mode-label::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🌙 DARK MODE ACTIVE */
+.dark-mode-checkbox:checked + .dark-mode-label {
+  background: #222;
+}
+
+/* 🔘 MOVE SLIDER WHEN CHECKED */
+.dark-mode-checkbox:checked + .dark-mode-label::after {
+  transform: translateX(24px);
+}
+
+/* 🌙 ICONS INSIDE SWITCH */
+.dark-mode-icon {
+  font-size: 14px;
+  position: absolute;
+}
+
+/* ☀️ SUN ICON */
+.dark-mode-icon:nth-child(2) {
+  right: 6px;
+  color: #f39c12;
+}
+
+/* 🌙 MOON ICON */
+.dark-mode-icon:nth-child(1) {
+  left: 6px;
+  color: #555;
+}
+
+/* ------------------------------------ */
+/* 📱 RESPONSIVE DESIGN (For Smaller Screens) */
+/* ------------------------------------ */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-container {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .resume-button {
+    margin-top: 10px;
+    text-align: center;
+  }
+}

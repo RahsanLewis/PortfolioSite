@@ -1,0 +1,119 @@
+/* ------------------------------------ */
+/* 🌍 GLOBAL STYLES */
+/* ------------------------------------ */
+
+/* 🔹 Reset default margin & padding for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Iceland", serif; /* Default font */
+}
+
+/* 🔹 Prevents horizontal scrolling issues */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ------------------------------------ */
+/* 🎨 BACKGROUND & RETRO GRID OVERLAY */
+/* ------------------------------------ */
+
+/* 🔹 Set background to whitesmoke and allow content to fit within the screen */
+body {
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* ------------------------------------ */
+/* 🖥️ CODE ELEMENTS - Console Look */
+/* ------------------------------------ */
+
+/* 🔹 Styles inline code elements for a futuristic console effect */
+code {
+  background: rgba(63, 114, 175, 0.7); /* Blue glow */
+  padding: 5px;
+  border-radius: 5px;
+  color: #f9f7f7;
+  border: 1px solid #f9f7f7;
+  text-shadow: 0 0 6px rgba(249, 247, 247, 0.8);
+}
+
+/* ------------------------------------ */
+/* 📦 GLOBAL UI COMPONENTS */
+/* ------------------------------------ */
+
+/* 🔹 General box style for UI elements like sections & cards */
+.box {
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgba(17, 45, 78, 0.85); /* Dark blue box */
+  border: 3px solid #3f72af; /* Blue border */
+  box-shadow: 0px 0px 20px rgba(63, 114, 175, 0.7); /* Blue glow */
+}
+
+
+/* ------------------------------------ */
+/* 🔘 GLOBAL BUTTONS (Blue to Gold on Hover) */
+/* ------------------------------------ */
+
+/* 🔹 Default button styles */
+.button, .view-project-btn, .see-all-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  background: rgba(17, 45, 78, 0.9);
+  color: #f9f7f7; /* Lightest Blue */
+  border: 3px solid #dbe2ef; /* Soft Blue Border */
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+}
+
+/* 🔹 Button hover effect - Turns gold */
+.button:hover, .view-project-btn:hover, .see-all-btn:hover {
+  background: #c9a227; /* Dim Gold */
+  color: black;
+  border: 3px solid #8b7500; /* Darker Gold Border */
+}
+
+/* ------------------------------------ */
+/* 🔗 GLOBAL LINKS */
+/* ------------------------------------ */
+
+/* 🔹 Default link styles */
+a {
+  text-decoration: none;
+  color: #dbe2ef; /* Soft Blue */
+  text-shadow: 0 0 6px rgba(219, 226, 239, 0.8);
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🔹 Link hover effect - Brighter white */
+a:hover {
+  color: #f9f7f7;
+  text-shadow: 0 0 12px rgba(249, 247, 247, 1);
+}
+
+/* ------------------------------------ */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------------------ */
+
+/* 🔹 Adjustments for smaller screens */
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+
+  /* 🔹 Reduce heading size */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* 🔹 Adjust button sizes for mobile */
+  .button {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
