@@ -1,7 +1,7 @@
 /* Footer Section */
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: .5rem;
     background: rgba(17, 45, 78, 0.95);
     border-top: 2px solid black; /* Strong contrast */
     box-shadow: 0px 0px 15px rgba(63, 114, 175, 0.8); /* Blue Glow */

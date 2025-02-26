@@ -1,121 +1,87 @@
-/* ------------------------------------ */
-/* 🎭 SKILLS SECTION (Styled like an RPG UI) */
-/* ------------------------------------ */
-
-.skills-section {
-  margin: 10rem 2rem 5.75rem 2rem;
-  height: 100%;
+/* 🎭 TECH STACK SECTION */
+.tech-stack-section {
+  margin: 0rem 0 1rem 0;
   text-align: center;
-  position: relative;
-  background: linear-gradient(135deg, #112D4E 30%, #3F72AF 70%); /* Blue gradient */
-  border: 2px solid black;
-  box-shadow: 0px 0px 15px rgba(63, 114, 175, 0.8);
-  border-radius: 12px;
-  padding: 2rem;
-}
-
-/* ------------------------------------ */
-/* 🕹️ RETRO GRID OVERLAY */
-/* ------------------------------------ */
-
-/* 🔹 Grid effect for a retro-styled UI */
-.skills-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+  padding: .5rem 0 1rem 0;
+  background: white;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  overflow: hidden; /* Prevents horizontal scroll */
 }
 
-/* ------------------------------------ */
 /* 🔠 SECTION HEADER */
-/* ------------------------------------ */
-
-/* 🔹 Main Skills Title */
-.skills-section h2 {
-  font-size: 4rem;
-  margin-bottom: 2rem;
-  color: #F9F7F7; /* Lightest Blue */
+.tech-stack-section h2 {
+  font-size: 2rem;
+  color: black;
   text-shadow: 0 0 12px rgba(249, 247, 247, 1);
-  border-bottom: 4px solid #DBE2EF;
   display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-/* ------------------------------------ */
-/* 🔳 SKILLS GRID */
-/* ------------------------------------ */
-
-/* 🔹 Responsive grid layout for skills */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-/* ------------------------------------ */
-/* 🎴 SKILL CARDS */
-/* ------------------------------------ */
-
-/* 🔹 Individual skill cards */
-.skill-card {
-  background: rgba(17, 45, 78, 0.9);
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #F9F7F7;
-  box-shadow: inset 0px 0px 10px rgba(63, 114, 175, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 300px;
-  color: #F9F7F7; /* Lightest Blue */
-}
-
-/* 🔹 Hover effect for skill cards */
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 0px 20px rgba(63, 114, 175, 0.8);
-}
-
-/* ------------------------------------ */
-/* 🎨 SKILL ICONS */
-/* ------------------------------------ */
-
-/* 🔹 Icons for each skill category */
-.skill-icon {
-  font-size: 3rem;
-  color: #DBE2EF; /* Soft Blue */
   margin-bottom: 1rem;
-  text-shadow: 0 0 8px rgba(219, 226, 239, 0.9);
 }
 
 /* ------------------------------------ */
-/* 📜 SKILLS LIST */
+/* 🔹 SCROLLING CONTAINER */
 /* ------------------------------------ */
 
-/* 🔹 List inside each skill card */
-.skill-card ul {
-  list-style: none;
-  padding: 0;
+.tech-stack-wrapper {
+  display: flex;
+  overflow: hidden; /* Hides overflow so icons only appear inside section */
+  width: 100%;
+  position: relative;
 }
 
-/* 🔹 Individual skill items */
-.skill-card li {
-  margin: 1rem 0;
+/* 🎥 SCROLLING ANIMATION */
+.tech-stack-scroll {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-right 300s linear infinite;
+}
+
+/* 🌀 ANIMATION - Moves right infinitely */
+@keyframes scroll-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* 🎴 GROUPING TECH STACK */
+.tech-stack-group {
+  display: flex;
+  gap: 0px;
+}
+
+/* 🎨 TECH STACK ITEMS */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px; /* Prevents items from shrinking */
+}
+
+/* 🎨 Tech Icons */
+.tech-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 📜 Tech Labels */
+.tech-item p {
   font-size: 1.5rem;
-  color: #DBE2EF;
-  text-shadow: 0 0 6px rgba(219, 226, 239, 0.7);
+  font-weight: 500;
+  color: black;
 }
 
-/* ------------------------------------ */
-/* 📱 RESPONSIVE DESIGN */
-/* ------------------------------------ */
-
-/* 🔹 Adjust grid layout for smaller screens */
+/* 📱 Mobile Adjustments */
 @media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .tech-stack-scroll {
+    animation: scroll-right 25s linear infinite;
+  }
+
+  .tech-item {
+    min-width: 120px;
   }
 }

@@ -21,28 +21,10 @@ html, body {
 
 /* 🔹 Set background to whitesmoke and allow content to fit within the screen */
 body {
-  background-color: whitesmoke;
   background-size: cover;
-  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-}
-
-/* 🔹 Adds a retro-style black grid overlay on top of the background */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-    linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
-  background-size: 20px 20px; /* Size of grid cells */
-  pointer-events: none; /* Ensures grid does not interfere with content */
-  z-index: -1;
 }
 
 /* ------------------------------------ */
@@ -72,30 +54,13 @@ code {
   box-shadow: 0px 0px 20px rgba(63, 114, 175, 0.7); /* Blue glow */
 }
 
-/* ------------------------------------ */
-/* 🔠 TEXT STYLES */
-/* ------------------------------------ */
-
-/* 🔹 Global styles for headings */
-h1, h2, h3, h4, h5, h6 {
-  text-transform: uppercase;
-  color: #dbe2ef; /* Soft Blue */
-  text-shadow: 0 0 14px rgba(219, 226, 239, 1);
-}
-
-/* 🔹 Paragraph styles */
-p {
-  font-size: 1.3rem;
-  color: #f9f7f7; /* White */
-  text-shadow: 0 0 6px rgba(249, 247, 247, 0.8);
-}
 
 /* ------------------------------------ */
 /* 🔘 GLOBAL BUTTONS (Blue to Gold on Hover) */
 /* ------------------------------------ */
 
 /* 🔹 Default button styles */
-.button, .scroll-arrow, .view-project-btn, .see-all-btn {
+.button, .view-project-btn, .see-all-btn {
   display: inline-block;
   padding: 12px 18px;
   text-transform: uppercase;
@@ -107,7 +72,7 @@ p {
 }
 
 /* 🔹 Button hover effect - Turns gold */
-.button:hover, .scroll-arrow:hover, .view-project-btn:hover, .see-all-btn:hover {
+.button:hover, .view-project-btn:hover, .see-all-btn:hover {
   background: #c9a227; /* Dim Gold */
   color: black;
   border: 3px solid #8b7500; /* Darker Gold Border */

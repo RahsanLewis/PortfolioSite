@@ -1,0 +1,44 @@
+.playground-container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #112d4e 30%, #3f72af 70%);
+    color: #f9f7f7;
+    border: 2px solid black;
+    box-shadow: 0px 0px 15px rgba(63, 114, 175, 0.8);
+    border-radius: 12px;
+  }
+  
+  textarea {
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(17, 45, 78, 0.9);
+    color: #f9f7f7;
+  }
+  
+  button {
+    background: #3f72af;
+    color: #f9f7f7;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background: #c9a227;
+    color: black;
+  }
+  
+  .output-box {
+    background: rgba(17, 45, 78, 0.9);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-align: left;
+    display: inline-block;
+  }
+  

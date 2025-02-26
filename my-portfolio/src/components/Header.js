@@ -1,60 +1,74 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./Header.css";
 
-const Header = () => {
-  // 🔹 State to track if the header should shrink on scroll
-  const [shrink, setShrink] = useState(false);
+/* HEADER ANIMATION */
+const headerVariants = {
+  hidden: { opacity: 0, y: -70 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+      delay: 0,
+    },
+  },
+};
 
-  // 🔹 Detect scroll position to toggle the "shrink" effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setShrink(window.scrollY > 50);
-    };
+const navItemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hover: { scale: 1.1, transition: { duration: 0.2, ease: "easeOut" } },
+};
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const Header = ({ darkMode, setDarkMode }) => {
   return (
-    <>
-      {/* 🔹 Header with dynamic "shrink" class when scrolled */}
-      <header className={`header ${shrink ? "shrink" : ""}`}>
-        {/* 🔹 LOGO (Now displays as "<Rahsan Lewis/>") */}
-        <div className="logo">&lt;Rahsan Lewis /&gt;</div>
+    <motion.header
+      className="header"
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {/* 🔹 Navigation Container */}
+      <nav className="nav-container">
+        {/* Logo */}
+        <motion.div className="nav-logo" variants={navItemVariants}>
+          <NavLink to="/" className="logo">
+            &lt;Rahsan Lewis /&gt;
+          </NavLink>
+        </motion.div>
 
-        {/* 🔹 NAVIGATION MENU (Center) */}
-        <nav>
-          <ul className="nav-links">
-            <li>
-              <a href="#about">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
+        {/* Navigation Links */}
+        <ul className="nav-links">
+          <motion.li variants={navItemVariants} whileHover="hover">
+            <NavLink to="/">Home</NavLink>{" "}
+          </motion.li>
+          {["Projects", "Resume", "Contact", "Playground"].map((name, i) => (
+            <motion.li key={i} variants={navItemVariants} whileHover="hover">
+              <NavLink to={`/${name.toLowerCase()}`}>{name}</NavLink>
+            </motion.li>
+          ))}
+        </ul>
+      </nav>
 
-        {/* 🔹 RESUME BUTTON (Right) */}
-        <div className="resume-button">
-          <a
-            href="/path/to/Your_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-        </div>
-      </header>
-    </>
+      {/* Dark Mode Toggle Switch */}
+      <motion.div className="dark-mode-container" variants={navItemVariants}>
+        <input
+          type="checkbox"
+          id="dark-mode-toggle"
+          className="dark-mode-checkbox"
+          checked={darkMode}
+          onChange={() => setDarkMode(!darkMode)}
+        />
+        <label htmlFor="dark-mode-toggle" className="dark-mode-label">
+          <span className="dark-mode-icon">🌙</span>
+          <span className="dark-mode-icon">☀️</span>
+        </label>
+      </motion.div>
+    </motion.header>
   );
 };
 

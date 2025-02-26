@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+/* 🔹 Light Mode (Default) */
+body {
+  background: whitesmoke;
+  color: black;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 🔹 Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #f9f7f7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Apply Dark Mode Styles to Main Sections */
+.dark-mode .header {
+  background: #1e1e1e;
+  border-bottom: 2px solid #3F72AF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dark-mode .nav-links a {
+  color: #F9F7F7;
 }
 
-.App-link {
-  color: #61dafb;
+.dark-mode .nav-links a:hover {
+  color: #C9A227;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark-mode .main-content {
+  background: #121212;
+}
+
+.dark-mode .projects-container,
+.dark-mode .about-container,
+.dark-mode .contact-container,
+.dark-mode .playground-container {
+  background: #1e1e1e;
+  color: #F9F7F7;
+  border: 2px solid #3F72AF;
+}
+
+/* Footer Dark Mode */
+.dark-mode footer {
+  background: #1e1e1e;
+  border-top: 2px solid #3F72AF;
+}
+
+/* Buttons in Dark Mode */
+.dark-mode .dark-mode-toggle,
+.dark-mode button {
+  background: #3F72AF;
+  color: #F9F7F7;
+}
+
+.dark-mode .dark-mode-toggle:hover,
+.dark-mode button:hover {
+  background: #C9A227;
+  color: black;
 }

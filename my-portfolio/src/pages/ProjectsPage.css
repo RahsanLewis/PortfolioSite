@@ -1,61 +1,215 @@
+/* 🎭 PROJECTS PAGE CONTAINER (MATCHES HERO LAYOUT) */
 .projects-container {
-    text-align: center;
-    padding: 40px;
-    background-color: #111; /* Match your site's theme */
-    color: #fff;
-  }
-  
-  .projects-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .projects-grid {
+  display: flex;
+  flex-direction: column; /* Stack title and grid */
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 5rem 4rem 4rem 4rem; /* Matches Hero padding */
+  text-align: center;
+  max-width: 100%;
+  margin: auto;
+  background: #f9f7f7; /* Matches Home Page background */
+  color: black;
+}
+
+/* 🔹 Flex container for projects title + grid */
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%; /* Matches Hero layout */
+  max-width: 1400px;
+}
+
+/* 🎴 PROJECTS GRID (Fix Width & Overflow) */
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ensures multiple columns */
     gap: 20px;
     justify-content: center;
-  }
-  
-  .project-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .project-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .project-image {
+    align-items: start;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .project-title {
-    font-size: 1.5rem;
-    margin: 10px 0;
-  }
-  
-  .project-description {
+    margin: 0 auto;
+}
+
+/* 🔹 PROJECT CARD DESIGN */
+.project-card {
+    width: 100%;
+    max-width: 19rem; /* Ensures all cards are the same width */
+    min-height: 13rem; /* Sets a minimum height so they stay uniform */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Evenly distributes content */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.project-title,
+.project-description,
+.project-category,
+.project-date {
+    flex-grow: 1; /* Allows content to fill space evenly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(219, 226, 239, 0.8);
+}
+
+
+/* 🔗 PROJECT LINKS */
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid black;
+  background: white;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease,
+    border 0.3s ease;
+}
+
+/* 🔹 HOVER EFFECT */
+.project-links a:hover {
+  background: black;
+  color: white;
+}
+
+/* 🔍 SEARCH BAR (Wider Version) */
+.project-search {
+  width: 50%; /* Increased width */
+  padding: 14px;
+  margin: 20px 0;
+  font-size: 1.1rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.project-search:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+/* 📜 NO RESULTS MESSAGE */
+.no-results {
+  font-size: 1.2rem;
+  color: gray;
+  margin-top: 20px;
+}
+
+/* 🔄 SEARCH, FILTER, & SORT CONTAINER (Ensures Search Bar is the Largest) */
+.search-filter-sort {
+  display: grid;
+  grid-template-columns: 1fr 1fr 5fr; /* Search bar is larger */
+  align-items: center;
+  gap: 15px;
+  width: 75%;
+  margin: 0 auto 1rem auto; /* Centers everything */
+}
+
+/* 🔍 SEARCH BAR (Larger than dropdowns) */
+.project-search {
+  padding: 14px;
+  font-size: 1.2rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 🔄 FILTER & SORT DROPDOWNS (Equal Size) */
+.project-filter,
+.project-sort {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 🔄 HOVER EFFECT */
+.project-filter:hover,
+.project-sort:hover {
+  border-color: #007bff;
+}
+
+/* 🔹 HEADINGS FOR FILTER & SORT */
+.filter-container, .sort-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-title, .sort-title {
     font-size: 1rem;
-    opacity: 0.8;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .search-filter-sort {
+    grid-template-columns: 1fr; /* Stack everything in one column */
+    gap: 10px;
   }
-  
-  .project-links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+
+  .project-filter,
+  .project-sort,
+  .project-search {
+    width: 90%;
+    max-width: 100%;
   }
-  
-  .project-links a:hover {
-    background-color: #0056b3;
+}
+
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+  .projects-content {
+    flex-direction: column;
+    text-align: center;
   }
-  
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 100%;
+  }
+
+  .project-card {
+    max-width: 90%;
+  }
+}

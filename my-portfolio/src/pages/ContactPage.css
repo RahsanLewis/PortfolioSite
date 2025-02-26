@@ -1,0 +1,144 @@
+/* 🎭 CONTACT SECTION (Refined Layout & Styling) */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 5rem 8rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* 🔹 Main Wrapper */
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 🔹 Left Side - Contact Info */
+.contact-content {
+  width: 45%;
+  text-align: left;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+/* 🔹 SOCIAL CONTACT LINKS */
+.contact-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  background: whitesmoke;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 2px solid black;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-links a:hover {
+  background: #c9a227;
+  transform: scale(1.05);
+}
+
+/* 🔹 Right Side - Contact Form */
+.contact-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  background: rgba(17, 45, 78, 0.1);
+  border-radius: 12px;
+  border: 2px solid black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Form Title */
+.form-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* 🔹 Form Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+}
+
+/* Placeholder Text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* 🔹 Send Button */
+.contact-form button {
+  background: whitesmoke;
+  color: black;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background: #c9a227;
+  transform: scale(1.05);
+}
+
+/* 📱 MOBILE ADJUSTMENTS */
+@media (max-width: 992px) {
+  .contact-wrapper {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+  }
+
+  .contact-content {
+      width: 90%;
+      text-align: center;
+  }
+
+  .contact-links {
+      justify-content: center;
+  }
+
+  .contact-form {
+      width: 90%;
+  }
+}
