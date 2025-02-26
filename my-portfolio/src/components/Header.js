@@ -46,7 +46,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           <motion.li variants={navItemVariants} whileHover="hover">
             <NavLink to="/">Home</NavLink>{" "}
           </motion.li>
-          {["Projects", "Resume", "Contact", "Playground"].map((name, i) => (
+          {["Projects", "Resume", "Contact"].map((name, i) => (
             <motion.li key={i} variants={navItemVariants} whileHover="hover">
               <NavLink to={`/${name.toLowerCase()}`}>{name}</NavLink>
             </motion.li>
